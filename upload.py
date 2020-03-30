@@ -3,8 +3,8 @@ import os
 
 token = ''
 client = discord.Client()
-
-files = os.listdir('C:\\Users\\Kulimi\\Pictures\\SuperDanger')
+upload_path = 'C:\\Users\\Kulimi\\Pictures\\UploadArea\\'
+files = os.listdir(upload_path)
 
 print(files)
 print(len(files))
@@ -12,6 +12,7 @@ print(len(files))
 start_upload = False
 
 record_file = open('record.txt', 'a')
+
 
 @client.event
 async def on_ready():
@@ -21,8 +22,6 @@ async def on_ready():
 @client.event
 async def on_message(message):
     global start_upload, record_file
-    print(f'[{message.guild.name}][{message.channel.name}][{message.author.name}]: {message.content}')
-
     if start_upload:
         return
     if message.author == client.user:
@@ -34,13 +33,14 @@ async def on_message(message):
         for file in files:
             try:
                 print(timer)
-                print(('C:\\Users\\Kulimi\\Pictures\\SuperDanger\\' + file))
-                record_file.write('C:\\Users\\Kulimi\\Pictures\\SuperDanger\\' + file + '\n')
-                await message.channel.send(file=discord.File('C:\\Users\\Kulimi\\Pictures\\SuperDanger\\' + file))
+                print((upload_path + file))
+                record_file.write(upload_path + file + '\n')
+                await message.channel.send(file=discord.File(upload_path + file))
             except Exception as e:
                 print(e)
-                print('error occur', 'C:\\Users\\Kulimi\\Pictures\\SuperDanger\\' + file)
+                print('error occur', upload_path + file)
             timer += 1
         print('End')
+
 
 client.run(token)
