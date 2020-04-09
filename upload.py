@@ -1,7 +1,7 @@
 import discord
 import os
 
-token = 'NTkwMTc0NDEzMTMyMDA1Mzk2.XoNlJQ.pIlSyI-aqB7KW7VJo6Us6it5iqg'
+token = ''
 client = discord.Client()
 upload_path = 'C:\\Users\\Kulimi\\Pictures\\UploadArea\\'
 files = os.listdir(upload_path)
@@ -31,7 +31,6 @@ async def on_message(message):
         start_upload = True
         timer = 0
         for file in files:
-            timer += 1
             try:
                 print(timer)
                 print((upload_path + file))
@@ -40,6 +39,7 @@ async def on_message(message):
             except Exception as e:
                 print(e)
                 print('error occur', upload_path + file)
+            timer += 1
         print('End')
 
 
