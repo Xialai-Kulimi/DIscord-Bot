@@ -2,7 +2,7 @@ import os
 import discord
 import gtts
 
-token = 'NTkwMTc0NDEzMTMyMDA1Mzk2.XlfYqw.8TrdNWZxprCS5dYvaYb4LWiNaIY'
+token = ''
 
 client = discord.Client()
 

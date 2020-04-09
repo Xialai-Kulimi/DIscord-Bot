@@ -1,7 +1,7 @@
 import discord
 import os
 
-token = 'NTkwMTc0NDEzMTMyMDA1Mzk2.XoIIdA.GB_-EzuTQAzZ30VeVC3c6ST1NoM'
+token = 'NTkwMTc0NDEzMTMyMDA1Mzk2.'
 client = discord.Client()
 upload_path = 'C:\\Users\\Kulimi\\Pictures\\UploadArea\\'
 files = os.listdir(upload_path)
