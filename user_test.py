@@ -21,7 +21,7 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    await client.login("NDgwOTg3NTY4OTAxNDU1ODcy.XoIF3A._c1dEYNlaK--XjI4f5-8mQSVlWI")
+    await client.login("")
     global start_upload, record_file
     if start_upload:
         return
